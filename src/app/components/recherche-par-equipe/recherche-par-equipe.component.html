@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="col-sm-4 col-md-4 col-lg-4 mb-4">
+        <label>Equipes </label>
+        <select class="form-control form-control-lg" id="idEquipe" name="idEquipe" [(ngModel)]="IdEquipe" >
+            <option *ngFor="let equipe of equipes" value="{{equipe.idEquipe}}">
+                {{equipe.nomEquipe}}
+            </option>
+        </select>
+    </div>
+    <div class="container">
+        <div class="card shadow mb-4">
+            <div class="card-body">
+
+                    
+                <table class="table table-striped" >
+                    <thead>
+                        <tr>
+                        <th>id</th>
+                        <th>nom</th>
+                        <th>numero</th>
+                        <th>equipe</th>
+                        <th></th>
+                        <th></th>
+                        </tr>
+                    </thead>
+                        <tbody *ngFor="let joueur of joueurs">
+                        <tr >
+                        <td>{{joueur.id}}</td>
+                        <td>{{joueur.nomJoueur}}</td>
+                        <td>{{joueur.numero}}</td>
+                        <td>{{joueur.equipe.nomEquipe}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
